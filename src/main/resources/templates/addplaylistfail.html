@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:each="usr:${User}" style="float: right; text-align: center; margin-top: 4px; margin-right: 30px">
+		<p th:text="'Howdy, '+${usr.username}"></p>
+		<a href="/map-loginPage"><button>Logout</button></a>
+	</div>
+	<div style="padding-top: 80px">
+		<h1>PlayList name is already exist, Try to add with other name!</h1>
+		<form action="/addplaylist" method="post">
+			<label>PlayList Name : </label><input type="text" name="name" required/>
+			<br/><br/>
+			<h2>List of Songs</h2>
+			<div th:each="song:${songsList}">
+				<input type="checkbox" th:name="songs" th:value="${song.id}"/>
+				<label th:text="${song.name}"></label>
+			</div>
+			<br/>
+			<input type="submit" value="Add PlayList"/>
+		</form>
+	</div>
+</body>
+</html>

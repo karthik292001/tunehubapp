@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:each="usr:${User}" style="float: right; text-align: center; margin-top: 2px; margin-right: 30px">
+		<p th:text="'Howdy, '+${usr.username}"></p>
+		<a href="/map-loginPage"><button>Logout</button></a>
+	</div>
+	<div style="padding-top:38px">
+		<a href="/map-userhome"><button>Home</button></a>
+		<a href="/exploresongs"><button>Explore Songs</button></a>
+		<a ><button>PlayLists</button></a>
+		<a ><button>Create PlayList</button></a>
+	</div>
+	<div style="padding-top: 50px">
+		<h1 style="text-align: center">List of songs</h1>
+		<table border=1 style="width: 100%">
+			<tr>
+				<th>Name</th>
+				<th>Artist</th>
+				<th>Genre</th>
+				<th>Link</th>
+			</tr>
+			<tr th:each="song:${songs}">
+				<td th:text="${song.name}"></td>
+				<td th:text="${song.artist}"></td>
+				<td th:text="${song.genre}"></td>
+				<td>
+					<audio controls>
+							<source th:src="${song.link}" type="audio/mpeg">
+					</audio>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

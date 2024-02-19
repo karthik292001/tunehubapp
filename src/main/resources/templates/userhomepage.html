@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Home Page</title>
+</head>
+<body>
+	<div th:each="usr:${User}" style="float: right; text-align: center; margin-right: 30px; margin-top: 4px;">
+		<p th:text="'Howdy, '+${usr.username}"></p>
+		<a href="/map-loginPage"><button>Logout</button></a>
+	</div>
+	<div style="padding-top:38px">
+		<a href="/exploresongs"><button>Explore Songs</button></a>
+		<a ><button>PlayLists</button></a>
+		<a ><button>Create PlayList</button></a>
+	</div>
+	<h1 style="text-align: center;padding-top:50px">Welcome to home page</h1>
+</body>
+</html>

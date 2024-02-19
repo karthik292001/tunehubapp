@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add song</title>
+</head>
+<body>
+	<div th:each="usr:${User}" style="float: right; text-align: center; margin-top: 4px; margin-right: 30px">
+		<p th:text="'Howdy, '+${usr.username}"></p>
+		<a href="/map-loginPage"><button>Logout</button></a>
+	</div>
+	<div style="padding-top: 80px">
+		<h1>Song name already exist, Try with other name!</h1>
+		<form action="/addsong" method="post">
+			<label>Name : </label><input type="text" name="name" required/>
+			<br/><br/>
+			<label>Artist : </label><input type="text" name="artist" required/>
+			<br/><br/>
+			<label>Genre : </label><input type="text" name="genre" required/>
+			<br/><br/>
+			<label>Link : </label><input type="text" name="link" required/>
+			<br/><br/>
+			<input type="submit" value="Add Song"/>
+		</form>
+	</div>
+</body>
+</html>
